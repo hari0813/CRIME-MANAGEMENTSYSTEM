@@ -1,0 +1,62 @@
+/* Dropdown Item Styling */
+.dropdown-item {
+    font-size: 14px;
+    color: #ffffff;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+  }
+/* Hover Effect on Dropdown Items */
+.dropdown-item:hover {
+  background-color: #f7f7f7;
+  color: #007BFF; /* Blue text color on hover */
+  border-radius: 5px;
+}
+
+/* Optional: Custom Arrow */
+.nav-link::after {
+  
+  font-size: 10px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate Arrow on Hover */
+.nav-item:hover .nav-link::after {
+    transform: rotate(180deg);
+  }
+/* Styling for Dropdown Menu */
+.dropdown-menu {
+  background-color: #1f233e;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+/* Extra Effect - Slide Down Animation for Dropdown */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the slideDown animation to the dropdown menu */
+.dropdown-menu {
+  animation: slideDown 0.3s ease-out;
+}
